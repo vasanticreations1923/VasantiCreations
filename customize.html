@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Customize | VASANTI CREATIONS</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+<img src="images/vasanti-creations-logo.png" alt="VASANTI CREATIONS">
+</a>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html" data-en="Home" data-mr="मुख्यपृष्ठ">Home</a></li>
+
+<li><a href="collections.html" data-en="Collections" data-mr="गिफ्ट कलेक्शन">Collections</a></li>
+
+<li><a href="occasions.html" data-en="Occasions" data-mr="प्रसंगानुसार गिफ्ट्स">Occasions</a></li>
+
+<li><a href="customize.html" data-en="Customize" data-mr="गिफ्ट तयार करा">Customize</a></li>
+
+<li><a href="about.html" data-en="About" data-mr="आमच्याबद्दल">About</a></li>
+
+<li><a href="contact.html" data-en="Contact" data-mr="संपर्क">Contact</a></li>
+
+<li class="lang-switch">
+<button data-lang="en" onclick="setLanguage('en')">EN</button>
+<button data-lang="mr" onclick="setLanguage('mr')">मराठी</button>
+</li>
+
+</ul>
+</nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<div>
+
+<span class="eyebrow light"></span>
+
+<h1
+data-en="Build Your Own Gift"
+data-mr="कल्पना तुमची, सेवा आमची">
+Build Your Own Gift
+</h1>
+
+<p
+data-en="Choose your budget first, then select products and quantities to create your gift."
+data-mr="प्रथम तुमचे बजेट निवडा आणि त्यानुसार उत्पादने व संख्या निवडून गिफ्ट तयार करा.">
+Choose your budget first, then select products and quantities to create your gift.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- STEP 1 -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2
+data-en="Step 1 — Select Your Budget"
+data-mr="स्टेप १ — तुमचे बजेट निवडा">
+Step 1 — Select Your Budget
+</h2>
+
+<p
+data-en="Choose the approximate budget per gift."
+data-mr="प्रत्येक गिफ्टसाठी अंदाजे बजेट निवडा.">
+Choose the approximate budget per gift.
+</p>
+
+</div>
+
+
+<div class="budget-grid">
+
+<div class="budget-card"
+onclick="selectBudget(99,this)">
+
+<h3>₹99</h3>
+
+<p
+data-en="Small gifting"
+data-mr="छोटे गिफ्ट">
+Small gifting
+</p>
+
+</div>
+
+
+<div class="budget-card"
+onclick="selectBudget(199,this)">
+
+<h3>₹199</h3>
+
+<p
+data-en="Basic options"
+data-mr="बेसिक पर्याय">
+Basic options
+</p>
+
+</div>
+
+
+<div class="budget-card"
+onclick="selectBudget(299,this)">
+
+<h3>₹299</h3>
+
+<p
+data-en="Smart gifting"
+data-mr="स्मार्ट गिफ्टिंग">
+Smart gifting
+</p>
+
+</div>
+
+
+<div class="budget-card"
+onclick="selectBudget(399,this)">
+
+<h3>₹399</h3>
+
+<p
+data-en="More choices"
+data-mr="अधिक पर्याय">
+More choices
+</p>
+
+</div>
+
+
+<div class="budget-card"
+onclick="selectBudget(499,this)">
+
+<h3>₹499</h3>
+
+<p
+data-en="Premium feel"
+data-mr="प्रीमियम गिफ्ट">
+Premium feel
+</p>
+
+</div>
+
+
+<div class="budget-card"
+onclick="selectBudget(799,this)">
+
+<h3>₹799</h3>
+
+<p
+data-en="Premium gifting"
+data-mr="प्रीमियम गिफ्टिंग">
+Premium gifting
+</p>
+
+</div>
+
+
+<div class="budget-card"
+onclick="selectBudget(999,this)">
+
+<h3>₹999+</h3>
+
+<p
+data-en="Luxury combinations"
+data-mr="लक्झरी कॉम्बिनेशन्स">
+Luxury combinations
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STEP 2 -->
+
+<section id="productSection" class="section beige">
+
+<div class="container">
+
+<div class="selected-budget">
+
+<span data-en="Selected Budget:"
+data-mr="निवडलेले बजेट:">
+Selected Budget:
+</span>
+
+₹<span id="displayBudget">0</span>
+
+<span
+data-en=" per gift"
+data-mr=" प्रति गिफ्ट">
+per gift
+</span>
+
+</div>
+
+
+<div class="section-heading">
+
+<h2
+data-en="Step 2 — Select Products"
+data-mr="स्टेप २ — उत्पादने निवडा">
+Step 2 — Select Products
+</h2>
+
+<p
+data-en="Select products and enter the quantity you need."
+data-mr="तुम्हाला हवी असलेली उत्पादने निवडा आणि त्यांची संख्या भरा.">
+Select products and enter the quantity you need.
+</p>
+
+</div>
+
+
+<div class="product-selection-grid">
+
+    <div class="gift-product"
+         data-name="Cookies Pack"
+         data-price="99"
+         onclick="toggleProduct(this)">
+        <img src="images/04-cookies-treats.png">
+        <h3>Cookies Pack</h3>
+        <strong>₹99</strong>
+    </div>
+
+    <div class="gift-product"
+         data-name="Chocolate Pack"
+         data-price="99"
+         onclick="toggleProduct(this)">
+        <img src="images/03-chocolate-sweet-gifts.png">
+        <h3>Chocolate Pack</h3>
+        <strong>₹99</strong>
+    </div>
+
+    <!-- your other products -->
+
+</div>
+
+<!-- ADD THIS HERE -->
+<div class="selected-products-wrapper">
+
+    <h3>Selected Products & Quantity</h3>
+
+    <div id="selectedProductsList">
+        <p>No products selected yet.</p>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STEP 3 -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2
+data-en="Step 3 — Your Gift Summary"
+data-mr="स्टेप ३ — तुमच्या गिफ्टचा सारांश">
+Step 3 — Your Gift Summary
+</h2>
+
+</div>
+
+
+<div class="summary">
+
+<p id="budgetSummary">
+Budget Per Gift: ₹0
+</p>
+
+<div id="productSummary">
+No products selected
+</div>
+
+<p id="totalSummary">
+Selected Total: ₹0
+</p>
+
+<!-- <p id="remainingSummary"
+class="remaining good">
+Remaining Budget: ₹0
+</p> -->
+
+<p id="grandTotal">
+<strong>Estimated Order Value: ₹0</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STEP 4 -->
+
+<section class="section beige">
+
+<div class="container">
+
+<div class="form-card">
+
+<div class="section-heading">
+
+<h2
+data-en="Step 4 — Send Your Enquiry"
+data-mr="स्टेप ४ — तुमची चौकशी पाठवा">
+Step 4 — Send Your Enquiry
+</h2>
+
+<p
+data-en="Submit your gift requirement and we will contact you with final pricing and availability."
+data-mr="तुमची गिफ्ट आवश्यकता पाठवा. आम्ही अंतिम किंमत आणि उपलब्धतेसाठी तुमच्याशी संपर्क करू.">
+Submit your gift requirement and we will contact you with final pricing and availability.
+</p>
+
+</div>
+
+
+<label
+for="customerName">
+Your Name
+</label>
+
+<input
+id="customerName"
+type="text"
+placeholder="Enter your name">
+
+
+<label
+for="customerPhone">
+WhatsApp Number
+</label>
+
+<input
+id="customerPhone"
+type="tel"
+placeholder="Enter your WhatsApp number">
+
+
+<label
+for="occasion">
+Occasion
+</label>
+
+<select id="occasion">
+
+  <option
+    value=""
+    data-en="Select Occasion"
+    data-mr="प्रसंग निवडा">
+    Select Occasion
+  </option>
+
+  <option
+    value="Birthday"
+    data-en="Birthday"
+    data-mr="वाढदिवस">
+    Birthday
+  </option>
+
+  <option
+    value="Return Gift"
+    data-en="Return Gift"
+    data-mr="रिटर्न गिफ्ट">
+    Return Gift
+  </option>
+
+  <option
+    value="Baby Shower"
+    data-en="Baby Shower"
+    data-mr="डोहाळे जेवण">
+    Baby Shower
+  </option>
+
+  <option
+    value="Wedding"
+    data-en="Wedding"
+    data-mr="लग्न">
+    Wedding
+  </option>
+
+  <option
+    value="Anniversary"
+    data-en="Anniversary"
+    data-mr="वर्धापनदिन">
+    Anniversary
+  </option>
+
+  <option
+    value="Corporate Gift"
+    data-en="Corporate Gift"
+    data-mr="कॉर्पोरेट गिफ्ट">
+    Corporate Gift
+  </option>
+
+  <option
+    value="Diwali"
+    data-en="Diwali"
+    data-mr="दिवाळी">
+    Diwali
+  </option>
+
+  <option
+    value="Festival"
+    data-en="Festival"
+    data-mr="सण">
+    Festival
+  </option>
+
+  <option
+    value="Other"
+    data-en="Other"
+    data-mr="इतर">
+    Other
+  </option>
+
+</select>
+
+<label
+for="quantity">
+Total Quantity
+</label>
+
+<input
+id="quantity"
+type="number"
+min="1"
+value="1"
+oninput="updateGiftSummary()">
+
+
+<label
+for="deliveryDate">
+Delivery Date
+</label>
+
+<input
+id="deliveryDate"
+type="date">
+
+
+<label
+for="specialMessage">
+Special Requirement
+</label>
+
+<textarea
+id="specialMessage"
+placeholder="Name, logo, message, packaging requirement, etc."></textarea>
+
+
+<div class="action-buttons">
+
+<button
+type="button"
+class="btn btn-primary"
+onclick="sendWhatsAppEnquiry()">
+
+📱 Send Enquiry on WhatsApp
+
+</button>
+
+
+<button
+type="button"
+class="btn btn-gold"
+id="emailEnquiryButton"
+onclick="sendEmailEnquiry()">
+
+📧 Send Enquiry
+
+</button>
+
+</div>
+
+<p
+id="emailStatus"
+style="margin-top:15px;text-align:center;font-weight:600;">
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>VASANTI CREATIONS</h3>
+
+<p>
+Thoughtful gifts for thoughtful moments.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>Quick Links</h4>
+
+<a href="collections.html">Collections</a>
+
+<a href="occasions.html">Occasions</a>
+
+<a href="customize.html">Customize</a>
+
+</div>
+
+
+<div>
+
+<h4>Contact</h4>
+
+<p>Pune, Maharashtra</p>
+
+<p>
+<a href="tel:+919890021266">
++91 98900 21266
+</a>
+</p>
+
+<p>
+<a href="mailto:vasanticreations1923@gmail.com">
+vasanticreations1923@gmail.com
+</a>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="social-links">
+
+<a href="https://www.instagram.com/"
+target="_blank">
+Instagram
+</a>
+
+<a href="https://www.facebook.com/"
+target="_blank">
+Facebook
+</a>
+
+<a href="mailto:vasanticreations1923@gmail.com">
+Email
+</a>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 VASANTI CREATIONS All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<a
+class="whatsapp"
+href="https://wa.me/919890021266"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
